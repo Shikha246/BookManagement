@@ -1,5 +1,10 @@
 const express = require("express");
+const cors = require("cors");
+
 const app= express()
+app.use(cors({
+  origin: "*", // or your frontend URL
+}));
 const {initializeDatabase} =require("./db/db.connect");
 
 const Book = require("./models/book.models");
